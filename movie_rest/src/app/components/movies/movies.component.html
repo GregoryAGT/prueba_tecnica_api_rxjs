@@ -1,0 +1,13 @@
+<div class="app">
+  <h1>List of Movies ... </h1>
+  <div class="search">
+    <input type="text" #movieInput placeholder="Search movie!!!">
+  </div>
+  <div *ngIf="(movies$ | async) as movies; else empty" class="container">
+    <app-list-movies *ngFor="let item of movies" [item]="item" ></app-list-movies>
+  </div>
+  <ng-template #empty class="empty">
+    <h3>No results found</h3>
+  </ng-template>
+
+</div>
